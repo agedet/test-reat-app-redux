@@ -1,23 +1,65 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+// import HomeScreen from './pages/HomeScreen';
+import LoginScreen from './pages/auth/LoginScreen';
+import Register from './pages/auth/Register';
+import AuthLayout from './components/Auth/Layout';
+import HomeScreen from './pages/shop-view/home';
+import AdminLayout from './pages/admin-view/layout';
+import AdminOrders from './pages/admin-view/orders';
+import AdminProducts from './pages/admin-view/products';
+import ShopLayout from './pages/shop-view/layout';
+import ShopOrders from './pages/shop-view/orders';
+import ShopProducts from './pages/shop-view/products';
+import ShopCheckout from './pages/shop-view/checkout';
+import CheckAuth from './pages/Check-Auth/CheckAuth';
 
 function App() {
+  const isAuthenticated = true;
+  // const user = null;
+
+  const user = {
+    name: 'Aniekan',
+    role: 'admin',
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-col overflow-hidden bg-white">
+      {/* components */}
+
+      <Routes>
+        <Route path='/auth' element={
+          <CheckAuth isAuthenticated={isAuthenticated} user={user}>
+            <AuthLayout />
+          </CheckAuth>
+        }>
+          <Route path='login' element={<LoginScreen />} />      
+          <Route path='register' element={<Register />} />
+        </Route>
+
+        <Route path='/' element={<HomeScreen />} />
+
+        <Route path='/admin' element={
+          <CheckAuth isAuthenticated={isAuthenticated} user={user}>
+            <AdminLayout />
+          </CheckAuth>
+        }>
+          <Route path='orders' element={<AdminOrders />} />
+          <Route path='products' element={<AdminProducts />} />
+        </Route>
+
+        <Route path='/shop' element={
+          <CheckAuth isAuthenticated={isAuthenticated} user={user}>
+            <ShopLayout />
+          </CheckAuth>
+        }>
+          <Route path='home' element={<HomeScreen />} />
+          <Route path='orders' element={<ShopOrders />} />
+          <Route path='products' element={<ShopProducts />} />
+          <Route path='checkout' element={<ShopCheckout />} />
+        </Route>
+      </Routes>
+      
     </div>
   );
 }
