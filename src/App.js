@@ -13,14 +13,15 @@ import ShopOrders from './pages/shop-view/orders';
 import ShopProducts from './pages/shop-view/products';
 import ShopCheckout from './pages/shop-view/checkout';
 import CheckAuth from './pages/Check-Auth/CheckAuth';
+import UpdateProfile from './pages/auth/UpdateProfile';
 
 function App() {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   // const user = null;
 
   const user = {
     name: 'Aniekan',
-    role: 'admin',
+    role: 'user',
   }
 
   return (
@@ -35,9 +36,10 @@ function App() {
         }>
           <Route path='login' element={<LoginScreen />} />      
           <Route path='register' element={<Register />} />
+          <Route path='update' element={<UpdateProfile />} />
         </Route>
 
-        <Route path='/' element={<HomeScreen />} />
+        {/* <Route path='/' element={<HomeScreen />} /> */}
 
         <Route path='/admin' element={
           <CheckAuth isAuthenticated={isAuthenticated} user={user}>

@@ -1,18 +1,27 @@
 import React from 'react'
+import avatar from '../../assets/avatar.png'
 
-function Register() {
+function UpdateProfile() {
   return (
     <div className='flex justify-center items-center'>
-      <div className=''>
+      <div className='border px-[20px] py-[30px]'>
         <div className='flex flex-col items-center'>
-          <h4 className='text-5xl font-bold'>Register</h4>
+          <h4 className='text-4xl font-bold'>Update Profile</h4>
 
-          <span className='py-4 text-xl w-2/3 text-center text-gray-500'>
-            welcome, shop all the shelf
+          <span className='py-2 text-md w-2/3 text-center text-gray-500'>
+            make your update to shop safely on the go...
           </span>
         </div>
 
         <form className='py-2 flex flex-col gap-[20px]'>
+          <div className='flex justify-center items-center py-4'>
+            <label htmlFor='profile'>
+                <img src={avatar} alt='avatar' className='h-[100px] w-[100px]' />
+            </label>
+
+            <input type='file' id='profile' name='profile' />
+          </div>
+
           <div>
             <label htmlFor='email' className='block mb-[5px]'>Email</label>
             <input type='email' name='email'  className='px-[10px] py-[5px]' placeholder='enter email' />
@@ -25,7 +34,7 @@ function Register() {
 
           <div>
             <button type='submit' className='w-full bg-black text-white rounded-[5px] py-[15px] text-[15px]'>
-              Create Account
+                Update Profile
             </button>
           </div>
         </form>
@@ -36,4 +45,4 @@ function Register() {
   )
 }
 
-export default Register
+export default UpdateProfile;
