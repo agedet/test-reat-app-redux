@@ -4,7 +4,7 @@ import avatar from '../../assets/avatar.png'
 function UpdateProfile() {
   return (
     <div className='flex justify-center items-center'>
-      <div className='border px-[20px] py-[30px]'>
+      <div className='border rounded-md px-[20px] py-[30px]'>
         <div className='flex flex-col items-center'>
           <h4 className='text-4xl font-bold'>Update Profile</h4>
 

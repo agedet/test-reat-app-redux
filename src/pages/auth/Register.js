@@ -3,9 +3,9 @@ import React from 'react'
 function Register() {
   return (
     <div className='flex justify-center items-center'>
-      <div className=''>
+      <div className='border rounded-md px-[20px] py-[30px]'>
         <div className='flex flex-col items-center'>
-          <h4 className='text-5xl font-bold'>Register</h4>
+          <h4 className='text-4xl font-bold'>Register</h4>
 
           <span className='py-4 text-xl w-2/3 text-center text-gray-500'>
             welcome, shop all the shelf
