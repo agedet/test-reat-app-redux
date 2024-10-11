@@ -14,6 +14,9 @@ import ShopProducts from './pages/shop-view/products';
 import ShopCheckout from './pages/shop-view/checkout';
 import CheckAuth from './pages/Check-Auth/CheckAuth';
 import UpdateProfile from './pages/auth/UpdateProfile';
+import ResetScreen from './pages/auth/ResetScreen';
+import UnauthPage from './pages/auth/UnauthPage';
+import NotFoundPage from './pages/auth/NotFoundPage';
 
 function App() {
   const isAuthenticated = false;
@@ -36,8 +39,10 @@ function App() {
         }>
           <Route path='login' element={<LoginScreen />} />      
           <Route path='register' element={<Register />} />
-          <Route path='update' element={<UpdateProfile />} />
-        </Route>
+         
+        </Route> 
+        <Route path='update' element={<UpdateProfile />} />
+        <Route path='reset' element={<ResetScreen />} />
 
         {/* <Route path='/' element={<HomeScreen />} /> */}
 
@@ -60,6 +65,9 @@ function App() {
           <Route path='products' element={<ShopProducts />} />
           <Route path='checkout' element={<ShopCheckout />} />
         </Route>
+        
+        <Route path='*' element={<NotFoundPage />} />
+        <Route path='/unauth-page' element={<UnauthPage />} />
       </Routes>
       
     </div>
