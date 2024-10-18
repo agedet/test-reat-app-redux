@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
-
-const initialState = {
-  password: '',
-}
+   
 
 function ResetScreen() {
-  const [password, setPassword] = useState(initialState);
+  const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();

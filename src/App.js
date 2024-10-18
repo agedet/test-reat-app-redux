@@ -17,6 +17,8 @@ import UpdateProfile from './pages/auth/UpdateProfile';
 import ResetScreen from './pages/auth/ResetScreen';
 import UnauthPage from './pages/auth/UnauthPage';
 import NotFoundPage from './pages/auth/NotFoundPage';
+import { ToastContainer } from 'react-toastify'
+import VerifyEmail from './pages/auth/VerifyEmail';
 
 function App() {
   const isAuthenticated = false;
@@ -29,6 +31,7 @@ function App() {
 
   return (
     <div className="flex flex-col overflow-hidden bg-white">
+      <ToastContainer position='top-center' limit={1} />
       {/* components */}
 
       <Routes>
@@ -41,8 +44,9 @@ function App() {
           <Route path='register' element={<Register />} />
          
         </Route> 
-        <Route path='update' element={<UpdateProfile />} />
-        <Route path='reset' element={<ResetScreen />} />
+        <Route path='/update' element={<UpdateProfile />} />
+        <Route path='/reset' element={<ResetScreen />} />
+        <Route path='/verify-email' element={<VerifyEmail />} />
 
         {/* <Route path='/' element={<HomeScreen />} /> */}
 

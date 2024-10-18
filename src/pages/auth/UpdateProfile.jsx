@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
 import avatar from '../../assets/avatar.png'
 
-const initialState = {
-  email: '',
-  password: '',
-}
+
 
 function UpdateProfile() {
-  const [email, setEmail] = useState(initialState);
-  const [password, setPassword] = useState(initialState);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();

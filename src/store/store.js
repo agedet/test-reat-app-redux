@@ -1,12 +1,13 @@
 // holds all global reducers
 
 import { configureStore } from "@reduxjs/toolkit";
+
 import authReducer from './AuthSlice'
 
 
 const store = configureStore({
     reducer: {
-        auth: authReducer
+        auth: authReducer,
     }
 })
 
