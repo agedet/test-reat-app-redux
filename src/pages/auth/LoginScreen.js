@@ -1,14 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
-const initialState = {
-  email: '',
-  password: '',
-}
-
 function LoginScreen() {
-  const [email, setEmail] = useState(initialState);
-  const [password, setPassword] = useState(initialState);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,17 +13,13 @@ function LoginScreen() {
     const url = '/api/login';
 
     const response = await fetch(url, formData);
-
-
-
-
   }
 
   return (
     <div className='flex justify-center items-center'>
       <div className='px-[20px] py-[20px]'>
         <div className='flex flex-col items-center'>
-          <h4 className='text-4xl font-bold'>Login </h4>
+          <h4 className='text-4xl font-bold'>Login</h4>
 
           <span className='py-4 text-md w-2/3 text-center text-gray-500'>
             welcome back, shop all the shelf
